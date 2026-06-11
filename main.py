@@ -28,7 +28,36 @@ def cage(array, num):
             retindex = retindex - 1
         return retindex + 1
 
-a = [2,2,3,7,7,11,15,21,21,21,35,43]
-lion = input("inpit number: ")
-ind = cage(a, int(lion))
-print(f"index of {lion} is {ind}")
+def myrandom():
+    import random
+    start = 10
+    end = 99
+    quantity = 10
+    i = 0
+    random_list = []
+    while i<=quantity:
+        rnd = random.randint(start, end)
+        if (rnd % 2) != 0:
+            random_list.append(rnd)
+            i = i + 1
+
+    return random_list
+
+def myrandom1():
+    import random
+    start = 10
+    end = 99
+    quantity = 10
+    i = 0
+    random_list = [random.randint(start, end) for _ in range(quantity)]
+    random_list = [num for num in random_list if num % 2 != 0]
+
+    return random_list
+
+print(myrandom())
+print(myrandom1())
+
+# a = [2,2,3,7,7,11,15,21,21,21,35,43]
+# lion = input("inpit number: ")
+# ind = cage(a, int(lion))
+# print(f"index of {lion} is {ind}")
